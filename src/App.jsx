@@ -39,7 +39,8 @@ import{ Model as Model6025} from './Model6025';
 import{ Model as Model605} from './Model605';
 import{ Model as Model61} from './Model61';
 
-import{ Model as Claddingparttest} from './Claddingparttest';
+//Cladding Models
+import{ Model as Modelclad8} from './Modelclad8';
 
 import TextureButton from './TextureButton';
 import DropdownMenu from './DropdownMenu';
@@ -75,7 +76,7 @@ const modelMapping = {
   },
   "claddingtest": {
     "No Space": Model600,
-    "claddingtest": Claddingparttest,
+    "claddingtest": Modelclad8,
   }
 };
 
