@@ -4,7 +4,7 @@ import { TextureLoader, RepeatWrapping } from 'three';
 
 export function Model({ textureUrl }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('/fencefinal/model25025.glb');
+  const { nodes, materials } = useGLTF('/alumarchcladding/model25025.glb');
 
   useEffect(() => {
     if (materials && textureUrl) {
@@ -262,4 +262,4 @@ export function Model({ textureUrl }) {
   )
 }
 
-useGLTF.preload('/fencefinal/model25025.glb')
+useGLTF.preload('/alumarchcladding/model25025.glb')

@@ -4,7 +4,7 @@ import { TextureLoader } from 'three';
 
 export function Model({ textureUrl }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('/fencefinal/modelg.glb');
+  const { nodes, materials } = useGLTF('/alumarchcladding/modelg.glb');
   const texture = new TextureLoader().load(textureUrl);
 
   useEffect(() => {
@@ -197,4 +197,4 @@ export function Model({ textureUrl }) {
   )
 }
 
-useGLTF.preload('/fencefinal/modelg.glb')
+useGLTF.preload('/alumarchcladding/modelg.glb')

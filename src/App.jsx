@@ -39,16 +39,30 @@ import{ Model as Model6025} from './Model6025';
 import{ Model as Model605} from './Model605';
 import{ Model as Model61} from './Model61';
 
+//Cladding test Models
+import{ Model as Modelclad4} from './Model4gapclad';
+import{ Model as Modelclad8} from './Modelclad8.';
+import{ Model as Modelclip8} from './Model8cliptest';
+
 //Cladding Models
-import{ Model as Modelclad8} from './Modelclad8';
+import{ Model as Model4c} from './Model4cladding';
+import{ Model as Model425c} from './Model425c';
+
+import{ Model as Model6c} from './Model6cladding2';
+import{ Model as Model625c} from './Model625cladding4';
+
+import{ Model as Model8c} from './Model8cladding';
+import{ Model as Model825c} from './Model825cladding2';
+
+import{ Model as globl} from './Globl2';
 
 import TextureButton from './TextureButton';
 import DropdownMenu from './DropdownMenu';
 import './styles.css';
 
 
-const slatSizes = ['2.5inch slat', '4inch slat', '6inch slat'];
-const spacerSizes = ['No Space', '0.25inch spacing', '0.5inch spacing', "'1inch spacing", ];
+const slatSizes = ['4inch Cladding', '6inch Cladding', '8inch Cladding'];
+const spacerSizes = ['No Reveal', 'Horizontal Reveal'];
 
 const modelMapping = {
   '1.5inch slat': {
@@ -75,8 +89,23 @@ const modelMapping = {
     '1inch spacing': Model61,
   },
   "claddingtest": {
-    "No Space": Model600,
+    "No Space": Modelclip8,
+    '0.25inch spacing': Modelclad4,
+    '0.5inch spacing': Model825c,
+    '1inch spacing': Model425c,
     "claddingtest": Modelclad8,
+  },
+  "4inch Cladding": {
+    "No Reveal": Model4c,
+   "Horizontal Reveal": Model425c,
+  },
+  "6inch Cladding": {
+    "No Reveal": Model6c,
+    "Horizontal Reveal": Model625c,
+  },
+  "8inch Cladding": {
+    "No Reveal": Model8c,
+    "Horizontal Reveal": Model825c,
   }
 };
 
@@ -89,76 +118,76 @@ const categories = [
 
 const textures = [
   // Standard Woodgrains to add - spotted gum
-  { url: '/fencefinal/Atlantic_Cedar.jpg', name: 'Atlantic Cedar', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Blackbutt.jpg', name: 'Blackbutt', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Bush_Cherry.jpg', name: 'Bush Cherry', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Chestnut.jpg', name: 'Chestnut', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Eastern_Mahogany.jpg', name: 'Eastern Mahogany', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Hickory.jpg', name: 'Hickory', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Iroko.jpg', name: 'Iroko', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Knotty_Pine.jpg', name: 'Knotty Pine', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Kwila.jpg', name: 'Kwila', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Light_Oak.jpg', name: 'Light Oak', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Maple.png', name: 'Maple', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Royal_Oak.jpg', name: 'Royal Oak', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Tassie_Oak.jpg', name: 'Tassie Oak', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Teak_Brown.jpg', name: 'Teak Brown', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/White_Ash.jpg', name: 'White Ash', category: 'Standard Woodgrains' },
-  { url: '/fencefinal/Western_Red_Cedar.jpg', name: 'Western Red Cedar', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Atlantic_Cedar.jpg', name: 'Atlantic Cedar', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Blackbutt.jpg', name: 'Blackbutt', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Bush_Cherry.jpg', name: 'Bush Cherry', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Chestnut.jpg', name: 'Chestnut', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Eastern_Mahogany.jpg', name: 'Eastern Mahogany', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Hickory.jpg', name: 'Hickory', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Iroko.jpg', name: 'Iroko', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Knotty_Pine.jpg', name: 'Knotty Pine', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Kwila.jpg', name: 'Kwila', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Light_Oak.jpg', name: 'Light Oak', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Maple.png', name: 'Maple', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Royal_Oak.jpg', name: 'Royal Oak', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Tassie_Oak.jpg', name: 'Tassie Oak', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Teak_Brown.jpg', name: 'Teak Brown', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/White_Ash.jpg', name: 'White Ash', category: 'Standard Woodgrains' },
+  { url: '/alumarchcladding/Western_Red_Cedar.jpg', name: 'Western Red Cedar', category: 'Standard Woodgrains' },
 
   // Non-standard Woodgrains
-  { url: '/fencefinal/Australian_Cedar.jpg', name: 'Australian Cedar', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Black_Ash.jpg', name: 'Black Ash', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Black_Walnut.jpg', name: 'Black Walnut', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Charcoal_Ash.jpg', name: 'Charcoal Ash', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Concrete.png', name: 'Concrete', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/English_Chestnut.jpg', name: 'English Chestnut', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Iron_Bark.jpg', name: 'Iron Bark', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Koa.jpg', name: 'Koa', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Red_Gum.jpg', name: 'Red Gum', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Tiger_Wood.jpg', name: 'Tiger Wood', category: 'Non-standard Woodgrains' },
-  { url: '/fencefinal/Wenge.jpg', name: 'Wenge', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Australian_Cedar.jpg', name: 'Australian Cedar', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Black_Ash.jpg', name: 'Black Ash', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Black_Walnut.jpg', name: 'Black Walnut', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Charcoal_Ash.jpg', name: 'Charcoal Ash', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Concrete.png', name: 'Concrete', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/English_Chestnut.jpg', name: 'English Chestnut', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Iron_Bark.jpg', name: 'Iron Bark', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Koa.jpg', name: 'Koa', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Red_Gum.jpg', name: 'Red Gum', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Tiger_Wood.jpg', name: 'Tiger Wood', category: 'Non-standard Woodgrains' },
+  { url: '/alumarchcladding/Wenge.jpg', name: 'Wenge', category: 'Non-standard Woodgrains' },
 
   // Solid Colors
-  { url: '/fencefinal/Admiral_Blue.jpg', name: 'Admiral Blue', category: 'Solid Colors' },
-  { url: '/fencefinal/Carbon.jpg', name: 'Carbon', category: 'Solid Colors' },
-  { url: '/fencefinal/Mistr.jpg', name: 'Mist', category: 'Solid Colors' },
-  { url: '/fencefinal/Midnight_Black.jpg', name: 'Midnight Black', category: 'Solid Colors' },
-  { url: '/fencefinal/Sandstone.jpg', name: 'Sandstone', category: 'Solid Colors' },
-  { url: '/fencefinal/Slate_Grey.jpg', name: 'Slate Grey', category: 'Solid Colors' },
-  { url: '/fencefinal/Smoke.jpg', name: 'Smoke', category: 'Solid Colors' },
-  { url: '/fencefinal/White.jpg', name: 'White', category: 'Solid Colors' },
-  { url: '/fencefinal/Vapor_Grey.jpg', name: 'Vapor Grey', category: 'Solid Colors' },
-  { url: '/fencefinal/Sterling.jpg', name: 'Sterling', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Admiral_Blue.jpg', name: 'Admiral Blue', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Carbon.jpg', name: 'Carbon', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Mistr.jpg', name: 'Mist', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Midnight_Black.jpg', name: 'Midnight Black', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Sandstone.jpg', name: 'Sandstone', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Slate_Grey.jpg', name: 'Slate Grey', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Smoke.jpg', name: 'Smoke', category: 'Solid Colors' },
+  { url: '/alumarchcladding/White.jpg', name: 'White', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Vapor_Grey.jpg', name: 'Vapor Grey', category: 'Solid Colors' },
+  { url: '/alumarchcladding/Sterling.jpg', name: 'Sterling', category: 'Solid Colors' },
 
   // Colors of Aus colors - Driftwood, Merbau, Black Wattle
-  { url: '/fencefinal/Black_Cedar.jpg', name: 'Black Cedar', category: 'Colors of Aus' },
-  { url: '/fencefinal/Driftwood.png', name: 'Driftwood', category: 'Colors of Aus' },
-  { url: '/fencefinal/French_Walnut.jpg', name: 'French Walnut', category: 'Colors of Aus' },
-  { url: '/fencefinal/Grey_Ash.jpg', name: 'Grey Ash', category: 'Colors of Aus' },
-  { url: '/fencefinal/Hamptons_Cedar.jpg', name: 'Hamptons Cedar', category: 'Colors of Aus' },
-  { url: '/fencefinal/Hinoki.jpg', name: 'Hinoki', category: 'Colors of Aus' },
-  { url: '/fencefinal/Merbau.png', name: 'Merbau', category: 'Colors of Aus' },
-  { url: '/fencefinal/Nordic_Oak.jpg', name: 'Nordic Oak', category: 'Colors of Aus' },
-  { url: '/fencefinal/Norwegian_Beech.jpg', name: 'Norwegian Beech', category: 'Colors of Aus' },
-  { url: '/fencefinal/Pacific_Teak.jpg', name: 'Pacific Teak', category: 'Colors of Aus' },
-  { url: '/fencefinal/Queensland_Walnut.jpg', name: 'Queensland Walnut', category: 'Colors of Aus' },
-  { url: '/fencefinal/Red_Wood.jpg', name: 'Red Wood', category: 'Colors of Aus' },
-  { url: '/fencefinal/Shou_Sugi_Ban.jpg', name: 'Shou Sugi Ban', category: 'Colors of Aus' },
-  { url: '/fencefinal/Silver_Wattle.jpg', name: 'Silver Wattle', category: 'Colors of Aus' },
-  { url: '/fencefinal/Spruce.jpg', name: 'Spruce', category: 'Colors of Aus' },
-  { url: '/fencefinal/Sycamore.jpg', name: 'Sycamore', category: 'Colors of Aus' },
-  { url: '/fencefinal/White_Ash.jpg', name: 'White Ash', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Black_Cedar.jpg', name: 'Black Cedar', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Driftwood.png', name: 'Driftwood', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/French_Walnut.jpg', name: 'French Walnut', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Grey_Ash.jpg', name: 'Grey Ash', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Hamptons_Cedar.jpg', name: 'Hamptons Cedar', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Hinoki.jpg', name: 'Hinoki', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Merbau.png', name: 'Merbau', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Nordic_Oak.jpg', name: 'Nordic Oak', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Norwegian_Beech.jpg', name: 'Norwegian Beech', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Pacific_Teak.jpg', name: 'Pacific Teak', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Queensland_Walnut.jpg', name: 'Queensland Walnut', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Red_Wood.jpg', name: 'Red Wood', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Shou_Sugi_Ban.jpg', name: 'Shou Sugi Ban', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Silver_Wattle.jpg', name: 'Silver Wattle', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Spruce.jpg', name: 'Spruce', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/Sycamore.jpg', name: 'Sycamore', category: 'Colors of Aus' },
+  { url: '/alumarchcladding/White_Ash.jpg', name: 'White Ash', category: 'Colors of Aus' },
 
 
 ];
 
 
 const App = () => {
-  const [textureUrl, setTextureUrl] = useState('/fencefinal/Light_Oak.jpg'); // Default texture URL
+  const [textureUrl, setTextureUrl] = useState('/alumarchcladding/Light_Oak.jpg'); // Default texture URL
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-  const [selectedSlatSize, setSelectedSlatSize] = useState('4inch slat');
-  const [selectedSpacerSize, setSelectedSpacerSize] = useState('1inch spacing');
+  const [selectedSlatSize, setSelectedSlatSize] = useState('8inch Cladding');
+  const [selectedSpacerSize, setSelectedSpacerSize] = useState('Horizontal Reveal');
   const [viewType, setViewType] = useState('Fencing');
 
   const [selectedTexture, setSelectedTexture] = useState("Light Oak"); // For highlighting the selected texture
@@ -223,8 +252,9 @@ const App = () => {
       </div>
 
       <div className="instructions-box">
-      <p>Hold left click to rotate the fence</p>
+      <p>Hold left click to rotate the cladding</p>
       <p>Scroll to zoom in and out</p>
+      <p>*Models roughly 10ft tall*</p>
     </div>
 
       {/* Canvas */}

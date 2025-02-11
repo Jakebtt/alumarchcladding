@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { TextureLoader, RepeatWrapping } from 'three';
+import { Environment } from '@react-three/drei';
+
+<Environment files="/hdr/environment.hdr" background={false} />
 
 export function Model({ textureUrl }) {
   const group = useRef();
@@ -16,94 +19,46 @@ export function Model({ textureUrl }) {
         const materialNames = [
           'Material.001',
           'Material.002',
-          'Material.003',
-          'Material.019',
-          'Material.clips.002',
-          'Material.metal.113',
-          'Material.119',
-'Material.metal.114',
-'Material.metal.111',
-'Material.117',
-'Material.metal.112',
-'Material.metal.109',
-'Material.115',
-'Material.metal.110',
-'Material.metal.107',
-'Material.113',
-'Material.metal.108',
-'Material.metal.105',
-'Material.111',
-'Material.metal.106',
-'Material.metal.103',
-'Material.109',
-'Material.metal.104',
-'Material.metal.101',
-'Material.107',
-'Material.metal.102',
-'Material.metal.099',
-'Material.105',
-'Material.metal.100',
-'Material.metal.097',
-'Material.103',
-'Material.metal.001',
-'Material.metal.089',
-'Material.095',
-'Material.metal.090',
-'Material.metal.087',
-'Material.093',
-'Material.metal.088',
-'Material.metal.085',
-'Material.091',
-'Material.metal.086',
-'Material.metal.083',
-'Material.089',
-'Material.metal.084',
-'Material.metal.081',
-'Material.087',
-'Material.metal.082',
-'Material.metal.079',
-'Material.085',
-'Material.metal.080',
-'Material.metal.075',
-'Material.081',
-'Material.metal.076',
-'Material.metal.073',
-'Material.079',
-'Material.metal.074',
-'Material.metal.071',
-'Material.077',
-'Material.metal.072',
-'Material.metal.069',
-'Material.075',
-'Material.metal.070',
-'Material.metal.067',
-'Material.073',
-'Material.metal.068',
-'Material.metal.065',
-'Material.071',
-'Material.metal.066',
-'Material.metal.063',
-'Material.069',
-'Material.metal.064',
-'Material.metal.061',
-'Material.067',
-'Material.metal.062',
-'Material.metal.059',
-'Material.065',
-'Material.metal.060',
-'Material.metal.057',
-'Material.063',
-'Material.metal.058',
-'Material.metal.055',
-'Material.061',
-'Material.metal.056',
-'Material.metal.049',
-'Material.055',
-'Material.metal.050',
-'Material.metal.047',
-'Material.052',
-'Material.metal.048',
-'Material.metal.002',
+          'Material.001',  
+'Material.002',  
+'Material.003',  
+'Material.019',  
+'Material.119',  
+'Material.117',  
+'Material.115',  
+'Material.113',  
+'Material.111',  
+'Material.109',  
+'Material.107',  
+'Material.105',  
+'Material.103',  
+'Material.101',  
+'Material.099',  
+'Material.097',  
+'Material.095',  
+'Material.093',  
+'Material.091',  
+'Material.089',  
+'Material.087',  
+'Material.085',  
+'Material.083',  
+'Material.081',  
+'Material.079',  
+'Material.077',  
+'Material.075',  
+'Material.073',  
+'Material.071',  
+'Material.069',  
+'Material.067',  
+'Material.065',  
+'Material.063',  
+'Material.061',  
+'Material.059',  
+'Material.057',  
+'Material.055',  
+'Material.052',  
+'Material.049',  
+'Material.047',
 
           ];
 
@@ -120,6 +75,7 @@ export function Model({ textureUrl }) {
 
   return (
     <group ref={group} position={[0, -3, 0]} scale={[2, 2, 2]} dispose={null}>
+      <directionalLight position={[0, 10, -10]} intensity={1.2} color="white" />
       <group name="Scene">
       <mesh geometry={nodes['C-KEDSTRADJ_(Starter)003'].geometry} material={materials['Material.001']} position={[1.572, 3.176, 0.008]} rotation={[-Math.PI, 0, Math.PI / 2]} scale={[1, 0.555, 1]} />
       <mesh geometry={nodes['C-KECFTTLM_(Top)'].geometry} material={materials['Material.001']} position={[-1.558, 0.011, 0.011]} rotation={[-Math.PI, 0, -1.571]} scale={[1, 0.555, 1]} />
@@ -465,11 +421,10 @@ export function Model({ textureUrl }) {
         <mesh geometry={nodes['C-KED150001_1'].geometry} material={materials['Material.metal.001']} />
         <mesh geometry={nodes['C-KED150001_2'].geometry} material={materials['Material.003']} />
         <mesh geometry={nodes['C-KED150001_3'].geometry} material={materials['Material.metal.002']} />
-        </group>
-        </group>
-    </group>
-  );
-}
-      
-      useGLTF.preload('/alumarchcladding/Modelclad8.glb');
-      
+          </group>
+             </group>
+         </group>
+       );
+     }
+           
+           useGLTF.preload('/alumarchcladding/Modelclad8.glb');

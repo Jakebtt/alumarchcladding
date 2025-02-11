@@ -101,7 +101,7 @@ button.selected > div {
   right: 0;
   z-index: 1;
   
-  background-image: url('/fencefinal//ColorBG.jpg');
+  background-image: url('/alumarchcladding//ColorBG.jpg');
   background-size: cover; /* Adjust this property as needed */
   background-position: center; /* Adjust this property as needed */
   border-radius: 10px; /* Optional: add some rounded corners */

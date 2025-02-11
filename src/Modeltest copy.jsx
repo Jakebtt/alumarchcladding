@@ -192,4 +192,4 @@ export function Model({ textureUrl }) {
   )
 }
 
-useGLTF.preload('/fencefinal/modeltest.glb')
+useGLTF.preload('/alumarchcladding/modeltest.glb')
