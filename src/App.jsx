@@ -3,46 +3,6 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import './styles.css';
 
-import { Model as Modela } from './Modela';
-import { Model as Modelb } from './Modelb';
-import { Model as Modelc } from './Modelc';
-import { Model as Modeld } from './Modeld';
-import { Model as Modele } from './Modele';
-import { Model as Modelf } from './Modelf';
-import { Model as Modelg } from './Modelg';
-import { Model as Modelh } from './Modelh';
-import { Model as Modeli } from './Modeli';
-import { Model as Modelj } from './Modelj';
-import { Model as Modelk } from './Modelk';
-import { Model as Modell } from './Modell';
-import { Model as Modeltest } from './Modeltest';
-import{ Model as Modelz} from './Modelz';
-
-//2.5inch Slat Models 
-import{ Model as Model2500} from "./Model2500";
-import{ Model as Model2500v3} from "./Model2500v3";
-import{ Model as Model25025} from "./Model25025";
-import{ Model as Model2505} from "./Model2505";
-import{ Model as Model2501} from "./Model2501";
-
-//4inch Slat Models 
-import{ Model as Model400} from "./Model400";
-import{ Model as Model400v2} from "./Model400v2";
-import{ Model as Model4025} from "./Model4025";
-import{ Model as Model405} from "./Model405";
-import{ Model as Model401} from "./Model401";
-
-
-//6inch Slat Models 
-import{ Model as Model600} from './Model600';
-import{ Model as Model6025} from './Model6025';
-import{ Model as Model605} from './Model605';
-import{ Model as Model61} from './Model61';
-
-//Cladding test Models
-import{ Model as Modelclad4} from './Model4gapclad';
-import{ Model as Modelclad8} from './Modelclad8.';
-import{ Model as Modelclip8} from './Model8cliptest';
 
 //Cladding Models
 import{ Model as Model4c} from './Model4cladding';
@@ -54,7 +14,7 @@ import{ Model as Model625c} from './Model625cladding4';
 import{ Model as Model8c} from './Model8cladding';
 import{ Model as Model825c} from './Model825cladding2';
 
-import{ Model as globl} from './Globl2';
+
 
 import TextureButton from './TextureButton';
 import DropdownMenu from './DropdownMenu';
@@ -65,36 +25,6 @@ const slatSizes = ['4inch Cladding', '6inch Cladding', '8inch Cladding'];
 const spacerSizes = ['No Reveal', 'Horizontal Reveal'];
 
 const modelMapping = {
-  '1.5inch slat': {
-    '0.25inch spacing': Modela,
-    '0.5inch spacing': Modelb,
-    '1inch spacing': Modelc,
-  },
-  '2.5inch slat': {
-    "No Space": Model2500v3,
-    '0.25inch spacing': Model25025,
-    '0.5inch spacing': Model2505,
-    '1inch spacing': Model2501,
-  },
-  '4inch slat': {
-    "No Space": Model400v2,
-    '0.25inch spacing': Model4025,
-    '0.5inch spacing': Model405,
-    '1inch spacing': Model401,
-  },
-  '6inch slat': {
-    "No Space": Model600,
-    '0.25inch spacing': Model6025,
-    '0.5inch spacing': Model605,
-    '1inch spacing': Model61,
-  },
-  "claddingtest": {
-    "No Space": Modelclip8,
-    '0.25inch spacing': Modelclad4,
-    '0.5inch spacing': Model825c,
-    '1inch spacing': Model425c,
-    "claddingtest": Modelclad8,
-  },
   "4inch Cladding": {
     "No Reveal": Model4c,
    "Horizontal Reveal": Model425c,

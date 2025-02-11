@@ -150,7 +150,8 @@ button.selected > div {
   z-index: 1000;
   padding: 5px;
   font-size: 16px;
-  
+  background-color: rgba(65, 63, 63, 0.7); /* Semi-transparent black background */
+  color: white; /* White text color for contrast */
 }
 
 .slat-size-dropdown, .spacer-size-dropdown {
@@ -160,10 +161,13 @@ button.selected > div {
   z-index: 1000;
   padding: 5px;
   font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
 }
 
 .spacer-size-dropdown {
   top: 240px; /* Adjust this value based on the slat size dropdown position */
+  background-color: rgba(65, 63, 63, 0.7); /* Semi-transparent black background */
+  color: white; /* White text color for contrast */
 }
 .slat-size-dropdown, .spacer-size-dropdown {
   position: absolute;
@@ -172,6 +176,8 @@ button.selected > div {
   z-index: 1000;
   padding: 5px;
   font-size: 16px;
+  background-color: rgba(65, 63, 63, 0.7); /* Semi-transparent black background */
+  color: white; /* White text color for contrast */
 }
 
 .spacer-size-dropdown {

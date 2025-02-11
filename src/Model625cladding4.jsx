@@ -5,7 +5,7 @@ import { TextureLoader, RepeatWrapping } from 'three';
 
 export function Model({ textureUrl }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('/alumarchcladding/model625cladding3.glb')
+  const { nodes, materials } = useGLTF('/alumarchcladding/model625cladding4.glb')
 
   useEffect(() => {
     if (materials && textureUrl) {
